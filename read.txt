@@ -1,0 +1,38 @@
+hardeepsinghpallaha@gmail.com
+
+git: https://github.com/HardeepSinghh9/javacp
+
+java course project
+
+
+functions:
+
+hideDropdown - Hides the dropdown list when it's not needed.
+populateRecentSearches - Populates the dropdown with the most recent search entries.
+fetchWeatherByCity - Fetches weather data for a specified city and updates the UI.
+fetchWeatherByCoords - Fetches weather data using geographic coordinates and updates the UI.
+updateUI - Updates the weather display with current weather data.
+fetchExtendedWeather - Fetches extended weather forecast data for a specified city and updates the UI.
+updateExtendedUI - Updates the extended weather forecast display.
+saveCity - Saves a city to the list of recent searches if it's not already included.
+
+
+
+listner and filters:
+
+Search Button Event Listener - document.getElementById('search-button').addEventListener('click', () => { fetchWeatherByCity(city); fetchExtendedWeather(city); hideDropdown(); }); 
+- Fetches and displays weather data for the entered city and hides dropdown.
+
+Current Location Button Event Listener - document.getElementById('current-location-button').addEventListener('click', () => { navigator.geolocation.getCurrentPosition(position => { fetchWeatherByCoords(latitude, longitude); }, error => { alert('Error getting location: ' + error.message); }); }); 
+- Retrieves and displays weather based on user's current location.
+
+City Input Focus Event Listener - cityInput.addEventListener('focus', () => { populateRecentSearches(); }); 
+- Populates dropdown with recent searches when the input field is focused.
+
+City Input Blur Event Listener - cityInput.addEventListener('blur', () => { setTimeout(() => hideDropdown(), 200); }); 
+- Hides the dropdown after a short delay when the input field loses focus.
+
+City Input Input Event Listener - cityInput.addEventListener('input', () => { /* Function body */ }); 
+- Filters and displays matching cities in the dropdown based on user input.
+
+
